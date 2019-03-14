@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Words";
+}
+
+<div class="main">
+    <div class="main-panel">
+
+        <h1>Толковый словарь живого, великорусского языка Владимира Ивановича Даля</h1>
+
+        <form asp-action="Index" asp-controller="Word" asp-anti-forgery="true">
+            <h2>Слово</h2>
+            <asp:Label ID="LabelWordName" runat="server"></asp:Label>
+            <h2>Значение слова</h2>
+            <asp:Label ID="LabelWordValue" runat="server"></asp:Label>
+            <asp:Label ID="LabelSubtitleWordLinks" runat="server" Visible="False"><h2>Упомянутые в ссылках слова</h2></asp:Label>
+            <asp:Label ID="LabelWordLinks" runat="server" Visible="False"></asp:Label>
+        </form>
+
+    </div>
+    @Html.Partial("_Menu")  
+</div>
+

@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Particles";
+}
+
+<div class="main">
+    <div class="main-panel">
+
+        <h1>Случайная "частица"</h1>
+
+        <form asp-action="Index" asp-controller="Particle" asp-anti-forgery="true">
+            <h2>Текст "частицы"</h2>
+            <asp:Label ID="LabelParticleLine" runat="server"></asp:Label>
+            <h2>Сведения о "частице"</h2>
+            <asp:Label ID="LabelParticleTitle" runat="server"></asp:Label>
+        </form>
+
+    </div>
+    @Html.Partial("_Menu")
+</div>
+
