@@ -22,8 +22,7 @@ namespace litclassic.Controllers
                 ParticlesCount = 10
             };
 
-            particleViewModel.BuildParticles();
-
+            particleViewModel.BuildModel(true, 10);
             ViewBag.Particles = particleViewModel.Particles;
 
             return View();

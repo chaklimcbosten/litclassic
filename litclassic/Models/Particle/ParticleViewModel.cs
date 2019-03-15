@@ -1,7 +1,5 @@
-﻿using System;
+﻿using litclassic.Models.Connect;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace litclassic.Models.Particle
 {
@@ -10,10 +8,16 @@ namespace litclassic.Models.Particle
         public bool Random { get; set; }
         public int ParticlesCount { get; set; }
         public List<Particle> Particles { get; set; }
+        public Particle Particle { get; set; }
 
-        public void BuildParticles()
+        public void BuildModel(bool random, int particlesCount)
         {
+            Particles = new ConnectParticle().GetRandomParticles(particlesCount);
+        }
 
+        public void BuildModel(int id)
+        {
+            Particle = new ConnectParticle().GetParticle(id);
         }
     }
 }
