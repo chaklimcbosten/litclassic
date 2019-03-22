@@ -1,4 +1,5 @@
-﻿
+﻿@using litclassic.Models.ParticleModels
+
 @{
     ViewData["Title"] = "Particles";
 }
@@ -9,10 +10,23 @@
         <h1>Случайная "частица"</h1>
 
         <form asp-action="Index" asp-controller="Particle" asp-anti-forgery="true">
-            <h2>Текст "частицы"</h2>
-            <asp:Label ID="LabelParticleLine" runat="server"></asp:Label>
-            <h2>Сведения о "частице"</h2>
-            <asp:Label ID="LabelParticleTitle" runat="server"></asp:Label>
+            @foreach (Particle particle in ViewBag.Particles)
+            {
+                <h2>Текст "частицы"</h2>
+
+                <div class="black-label-main-content">
+                    @foreach (var line in particle.BodyLines)
+                    {
+                        <p>@line</p>
+                    }
+                </div>
+
+                <h2>Сведения о "частице"</h2>
+
+                <div class="black-label-main-content">
+                    <p>@particle.Title</p>
+                </div>
+            }
         </form>
 
     </div>

@@ -35,7 +35,7 @@
                             <h4>По содержанию:</h4>
                         </div>
                         <div class="particle-settings-checkboxes-theme-types">
-                            @foreach (var themeType in ViewBag.Particle.ThemeTypes)
+                            @foreach (var themeType in ViewBag.ParticleParams.ThemeTypes)
                             {
                                 <input class="checkbox-span" type="checkbox" /> @themeType
                             }
@@ -58,7 +58,7 @@
                             <h4>По авторам:</h4>
                         </div>
                         <div class="particle-settings-checkboxes-authors-numbers">
-                            @foreach (var author in ViewBag.Particle.Authors)
+                            @foreach (var author in ViewBag.ParticleParams.Authors)
                             {
                                 <input class="checkbox-span" type="checkbox" /> @author
                             }

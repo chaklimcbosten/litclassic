@@ -1,4 +1,5 @@
-﻿
+﻿@using litclassic.Models.WordModels
+
 @{
     ViewData["Title"] = "Words";
 }
@@ -9,12 +10,26 @@
         <h1>Толковый словарь живого, великорусского языка Владимира Ивановича Даля</h1>
 
         <form asp-action="Index" asp-controller="Word" asp-anti-forgery="true">
-            <h2>Слово</h2>
-            <asp:Label ID="LabelWordName" runat="server"></asp:Label>
-            <h2>Значение слова</h2>
-            <asp:Label ID="LabelWordValue" runat="server"></asp:Label>
-            <asp:Label ID="LabelSubtitleWordLinks" runat="server" Visible="False"><h2>Упомянутые в ссылках слова</h2></asp:Label>
-            <asp:Label ID="LabelWordLinks" runat="server" Visible="False"></asp:Label>
+            @foreach (Word word in ViewBag.Words)
+            {
+                <h2>Слово</h2>
+                <div class="LabelWordName">@word.Name</div>
+                <h2>Значение слова</h2>
+                <div class="LabelWordValue">@word.Value</div>
+
+                @if (word.WordsInLinks.Count != 0)
+                {
+                    <h2>Упомянутые в ссылках слова</h2>
+
+                    @foreach (Word wordInLink in word.WordsInLinks)
+                    {
+                        <h2>Слово</h2>
+                        <div class="LabelWordName">@wordInLink.Name</div>
+                        <h2>Значение слова</h2>
+                        <div class="LabelWordValue">@wordInLink.Value</div>
+                    }
+                }
+            }
         </form>
 
     </div>

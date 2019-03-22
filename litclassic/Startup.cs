@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using litclassic.Models.User;
+﻿using litclassic.Models.ProxyModels;
+using litclassic.Models.UserModels;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,9 +21,15 @@ namespace litclassic
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<UserContext>(options => options.UseSqlServer(connection));
-            services.AddDbContext<LitClassicBooksContext>(options => options.UseSqlServer(connection));
+            // базы данных
+            //string connection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<UserContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<LitClassicBooksContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            // сервисы "прокси"
+            services.AddScoped<IParticleProxy, ParticleProxy>();
+            services.AddScoped<IParticleParamsProxy, ParticleParamsProxy>();
+            services.AddScoped<IWordProxy, WordProxy>();
 
             // установка конфигурации подключения
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -58,7 +58,7 @@ namespace litclassic
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseAuthentication();
-            //app.UseCookiePolicy();
+            app.UseCookiePolicy();
 
             app.UseMvc(routes =>
             {

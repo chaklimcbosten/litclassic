@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using litclassic.Models.Words;
+﻿using litclassic.Models.ProxyModels;
+using litclassic.Models.WordModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +8,23 @@ namespace litclassic.Controllers
 {
     public class WordController : Controller
     {
+        private readonly IWordProxy _wordProxy;
+        private readonly LitClassicBooksContext _db;
+
+        public WordController(IWordProxy wordProxy, LitClassicBooksContext db)
+        {
+            _wordProxy = wordProxy;
+            _db = db;
+        }
+
         // GET: Word
         public ActionResult Index()
         {
-            ViewBag.Words = new Words();
+            var wordViewModel = new WordViewModel(_wordProxy, _db);
+
+            wordViewModel.BuildModel(true, 1);
+
+            ViewBag.Words = wordViewModel.Words;
 
             return View();
         }

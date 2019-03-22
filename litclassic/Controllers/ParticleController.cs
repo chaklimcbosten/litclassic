@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using litclassic.Models.Particle;
+using litclassic.Models;
+using litclassic.Models.ParticleModels;
+using litclassic.Models.ProxyModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,18 +14,32 @@ namespace litclassic.Controllers
     [Authorize]
     public class ParticleController : Controller
     {
+        private readonly IParticleProxy _particleProxy;
+        private readonly IParticleParamsProxy _particleParamsProxy;
+        private readonly LitClassicBooksContext _db;
+
+        public ParticleController(IParticleProxy particleProxy, IParticleParamsProxy particleParamsProxy, LitClassicBooksContext db)
+        {
+            _particleProxy = particleProxy;
+            _particleParamsProxy = particleParamsProxy;
+            _db = db;
+        }
+
         // GET: Particle
         [AllowAnonymous]
         public ActionResult Index()
         {
-            var particleViewModel = new ParticleViewModel()
+            var particleViewModel = new ParticleViewModel(_particleProxy, _db);
+            var particleParams = new ParticleParams()
             {
-                Random = true,
-                ParticlesCount = 10
+                Authors = new List<string> { "Достоевский", "Пушкин" },
+                ThemeTypes = new List<string> { "основные", "ещё" }
             };
 
-            particleViewModel.BuildModel(true, 10);
+            particleViewModel.BuildModel(true, 1);
+
             ViewBag.Particles = particleViewModel.Particles;
+            ViewBag.ParticleParams = particleParams;
 
             return View();
         }

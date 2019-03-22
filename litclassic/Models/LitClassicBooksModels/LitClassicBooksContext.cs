@@ -12,6 +12,7 @@ namespace litclassic
 
         public LitClassicBooksContext(DbContextOptions<LitClassicBooksContext> options) : base(options)
         {
+            Database.EnsureCreated();
         }
 
         public virtual DbSet<Books> Books { get; set; }
@@ -64,7 +65,7 @@ namespace litclassic
         {
             if (!optionsBuilder.IsConfigured)
             {
-                //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.               
             }
         }
 
