@@ -1,35 +1,60 @@
-﻿@using litclassic.Models.ParticleModels
-
-@{
+﻿@{
     ViewData["Title"] = "Particles";
 }
 
 <div class="main">
     <div class="main-panel">
 
-        <h1>Случайная "частица"</h1>
+        <h1>Случайные "частицы"</h1>
 
-        <form asp-action="Index" asp-controller="Particle" asp-anti-forgery="true">
-            @foreach (Particle particle in ViewBag.Particles)
-            {
-                <h2>Текст "частицы"</h2>
+        <div id="particleScrollList">
+            @Html.Partial("_Particles")
+        </div>
 
-                <div class="black-label-main-content">
-                    @foreach (var line in particle.BodyLines)
-                    {
-                        <p>@line</p>
-                    }
-                </div>
-
-                <h2>Сведения о "частице"</h2>
-
-                <div class="black-label-main-content">
-                    <p>@particle.Title</p>
-                </div>
-            }
-        </form>
+        @*блок для обозначения процесса загрузки новых "частиц"*@
+        <div id="loading"></div>
 
     </div>
     @Html.Partial("_Menu")
 </div>
+
+@*FROM https://metanit.com/sharp/articles/mvc/15.php*@
+<script type="text/javascript">
+    $(function () {
+
+        $('div#loading').hide();
+
+        var _inCallback = false;
+        function loadItems() {
+            if (!_inCallback) {
+                _inCallback = true;
+                
+                $('div#loading').show();
+
+                $.ajax({
+                    type: 'GET',
+                    url: '/Particle/Index/' + page,
+                    success: function (data, textstatus) {
+                        if (data != '') {
+                            $("#particleScrollList").append(data);
+                        }
+                        else {
+                            page = -1;
+                        }
+                        _inCallback = false;
+                        $("div#loading").hide();
+                    }
+                });
+            }
+        }
+        // обработка события скроллинга
+        $(window).scroll(function () {
+            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+
+                //loadItems();
+                $("$particleScrollList").load("@Url.Action("ParticleList","Particle")");
+            }
+        });
+    })
+</script>
 

@@ -10,24 +10,29 @@ namespace litclassic.Models.ParticleModels
         // https://docs.microsoft.com/ru-ru/dotnet/standard/design-guidelines/guidelines-for-collections
 
         private readonly IParticleProxy _particleProxy;
+        private readonly IParticleParamsProxy _particleParamsProxy;
         private readonly LitClassicBooksContext _db;
 
-        public ParticleViewModel(IParticleProxy particleProxy, LitClassicBooksContext db)
+        public ParticleViewModel(IParticleProxy particleProxy, IParticleParamsProxy particleParamsProxy, LitClassicBooksContext db)
         {
             _particleProxy = particleProxy;
+            _particleParamsProxy = particleParamsProxy;
             _db = db;
         }
 
-        public List<Particle> Particles { get; private set; }
-        public Particle Particle { get; private set; }
+        public ParticlePartialViewModel ParticlePartialViewModel { get; private set; }
+        public ParticleParams ParticleParams { get; private set; }
 
-        public void BuildModel(bool random, int particlesCount)
+        public void BuildModel(int particlesCount)
         {
-            Particles = _particleProxy.GetRandomParticles(particlesCount);
-        }
-        public void BuildModel(int id)
-        {
-            Particle = _particleProxy.GetParticle(id);
+            ParticlePartialViewModel = new ParticlePartialViewModel(_particleProxy, _db);
+            ParticleParams = new ParticleParams
+            {
+                Authors = new List<string> { "Достоевский", "Пушкин" },
+                ThemeTypes = new List<string> { "основные", "ещё" }
+            };
+
+            ParticlePartialViewModel.BuildModel(particlesCount);
         }
     }
 }

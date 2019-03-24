@@ -29,19 +29,25 @@ namespace litclassic.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            var particleViewModel = new ParticleViewModel(_particleProxy, _db);
-            var particleParams = new ParticleParams()
-            {
-                Authors = new List<string> { "Достоевский", "Пушкин" },
-                ThemeTypes = new List<string> { "основные", "ещё" }
-            };
+            var particleViewModel = new ParticleViewModel(_particleProxy, _particleParamsProxy, _db);
 
-            particleViewModel.BuildModel(true, 1);
+            particleViewModel.BuildModel(3);
 
-            ViewBag.Particles = particleViewModel.Particles;
-            ViewBag.ParticleParams = particleParams;
+            ViewBag.Particles = particleViewModel.ParticlePartialViewModel.Particles;
+            ViewBag.ParticleParams = particleViewModel.ParticleParams;
 
             return View();
+        }
+
+        public ActionResult ParticleList()
+        {
+            var particlePartialViewModel = new ParticlePartialViewModel(_particleProxy, _db);
+
+            particlePartialViewModel.BuildModel(3);
+
+            ViewBag.Particles = particlePartialViewModel.Particles;
+
+            return PartialView("_Particles");
         }
 
         public ActionResult Menu()
