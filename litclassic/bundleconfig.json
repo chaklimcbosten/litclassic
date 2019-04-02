@@ -5,5 +5,12 @@
       "wwwroot/css/Home/_Menu.css",
       "wwwroot/css/Shared/_layout.css"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/css/Particle/Particle.css",
+    "inputFiles": [
+      "wwwroot/css/Particle/_Menu.css",
+      "wwwroot/css/Shared/_layout.css"
+    ]
   }
 ]
