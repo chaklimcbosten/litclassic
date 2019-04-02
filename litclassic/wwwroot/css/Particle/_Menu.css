@@ -1,0 +1,56 @@
+﻿/*Блок настроек получения "частиц"*/
+.particle-settings {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.particle-settings-theme-types-column {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+.particle-settings-authors-numbers-column {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+.particle-settings-checkboxes-theme-types {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.particle-settings-checkboxes-authors-numbers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.particle-settings-authors-numbers-checkboxes-group {
+    display: flex;
+    flex-direction: column;
+}
+.checkbox-span {
+    text-align: left;
+}
+.button-hide-particle-settings {
+    width: 100%;
+    letter-spacing: 0.75px;
+    font-size: 14px;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    margin: 10px 0px 10px 0px;
+    padding: 7px 14px 7px 14px;
+    border: 2px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+}
+    .button-hide-particle-settings:hover {
+        background-color: whitesmoke;
+    }
+    .button-hide-particle-settings:active {
+        background-color: lightgrey;
+    }

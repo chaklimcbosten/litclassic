@@ -1,0 +1,9 @@
+[
+  {
+    "outputFileName": "wwwroot/css/Home/Home.css",
+    "inputFiles": [
+      "wwwroot/css/Home/_Menu.css",
+      "wwwroot/css/Shared/_layout.css"
+    ]
+  }
+]

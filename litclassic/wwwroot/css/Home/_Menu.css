@@ -1,0 +1,43 @@
+﻿/*Раздел последних действий*/
+.last-actions {
+    display: flex;
+    flex-direction: column;
+}
+.last-actions-tip {
+    color: black;
+}
+.last-actions-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.last-action-particle,
+.last-action-word {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 260px;
+    flex-grow: 6;
+}
+.last-action-link {
+    text-decoration: none;
+    color: white;
+}
+.last-action-black-label-word,
+.last-action-black-label-particle {
+    letter-spacing: 0.4px;
+    font-size: 14px;
+    background-color: black;
+    border-radius: 20px;
+    /*4 dp*/
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.20);
+    padding: 10px 20px 10px 20px;
+    color: white;
+    margin-bottom: 5px;
+}
+.last-action-black-label-word {
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+.content-main-page {
+    color: black;
+}

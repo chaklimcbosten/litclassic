@@ -11,6 +11,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace litclassic.Controllers
 {
+    // TODO
+    // Реализовать получение "частиц" с помощью AJAX
+    // https://metanit.com/sharp/mvc5/10.3.php
+
     [Authorize]
     public class ParticleController : Controller
     {
@@ -47,7 +51,7 @@ namespace litclassic.Controllers
 
             ViewBag.Particles = particlePartialViewModel.Particles;
 
-            return PartialView("_Particles");
+            return PartialView("_particle");
         }
 
         public ActionResult Menu()
