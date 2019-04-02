@@ -1,15 +1,26 @@
 [
   {
-    "outputFileName": "wwwroot/css/Home/Home.css",
+    "outputFileName": "wwwroot/css/Home/Home.min.css",
     "inputFiles": [
+      "wwwroot/css/Shared/Error.css",
       "wwwroot/css/Home/_Menu.css",
       "wwwroot/css/Shared/_layout.css"
     ]
   },
   {
-    "outputFileName": "wwwroot/css/Particle/Particle.css",
+    "outputFileName": "wwwroot/css/Particle/Particle.min.css",
     "inputFiles": [
+      "wwwroot/css/Shared/Error.css",
       "wwwroot/css/Particle/_Menu.css",
+      "wwwroot/css/Shared/_layout.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/Account/Account.min.css",
+    "inputFiles": [
+      "wwwroot/css/Account/Login.css",
+      "wwwroot/css/Account/Register.css",
+      "wwwroot/css/Shared/Error.css",
       "wwwroot/css/Shared/_layout.css"
     ]
   }
