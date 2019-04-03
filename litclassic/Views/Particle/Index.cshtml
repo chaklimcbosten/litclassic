@@ -14,7 +14,7 @@
         </div>
 
         @*блок для обозначения процесса загрузки новых "частиц"*@
-        <div id="loading">тумс</div>
+        <div id="loading">ЗАГРУЗКА</div>
 
     </div>
     @Html.Partial("_Menu")
@@ -22,50 +22,46 @@
 
 @*FROM https://metanit.com/sharp/articles/mvc/15.php*@
 @*@Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")*@
+@Scripts.Render("~/bundles/bootstrap")*@
+@*@section Scripts{*@
 <script type="text/javascript">
     $(function () {
 
-        $('div#loading').hide();
+        // переменная, показывающая началась лишь сейчас загрузка "частиц"
+        // переменная, которая содержит высоту страницы на предыдущей фазе загрузке "частиц"
+        // загружать "частицы", если уже не загружаются новые, а также тогда, когда ползунок
+        // прошёл высоту страницы предыдущей фазы
 
-        //var page = 0;
-        //var count = 3;
-        //var _inCallback = false;
-        //function loadItems()
-        //{
-        //    if (page > -1 && !_inCallback) {
-        //        _inCallback = true;
-        //        page++;
-        //        $('div#loading').show();
+        var loading;
 
-        //        $.ajax({
-        //            type: 'GET',
-        //            url: '/Particle/ParticleList/' + count,
-        //            success: function (data, textstatus) {
-        //                if (data != '') {
-        //                    $("#particleScrollList").append(data);
-        //                }
-        //                else {
-        //                    page = -1;
-        //                }
-        //                _inCallback = false;
-        //                $("div#loading").hide();
-        //            }
-        //        });
-        //    }
-        //}
+        function loadMoreParticles() {
+            // обозначает начало процесса подгрузки "частиц"
+            loading = true;
+            $.ajax(
+                {
+                    type: 'GET',
+                    url: '/Particle/ForInfiniteScrolling',
+                    contentType: 'html',
+                    success: function (data, textstatus) {
+                        if (data != '') {
+                            $("#particleScrollList").append(data);
+                        }
+                        else {
+                            page = -1;
+                        }
+                        $("#loading").hide();
+                        // обозначает завершения процесса подгрузки "частиц"
+                        loading = false;
+                    }
+                });
+        };
+
         // обработка события скроллинга
         $(window).scroll(function () {
-            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-                //loadItems();
-                $("#loading").hide();
-            }
-
-            //FROM https://forums.asp.net/t/2151152.aspx?Infinite+Scrolling+Using+JQuery+Ajax+MVC+C+
-            if ($(document).height() - $(this).height() == $(this).scrollTop()) {
-                alert('Scrolled is at the Bottom');
+            if (($(window).scrollTop() + $(window).height() > $(document).height() - 40) && (!loading)) {
+                loadMoreParticles();
             }
         });
-    })
+    });
 </script>
 

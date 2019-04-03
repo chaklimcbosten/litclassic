@@ -43,7 +43,9 @@ namespace litclassic.Controllers
             return View();
         }
 
-        public ActionResult ParticleList()
+        [AllowAnonymous]
+        // GET: Particle/ForInfiniteScrolling
+        public ActionResult ForInfiniteScrolling()
         {
             var particlePartialViewModel = new ParticlePartialViewModel(_particleProxy, _db);
 
@@ -51,7 +53,7 @@ namespace litclassic.Controllers
 
             ViewBag.Particles = particlePartialViewModel.Particles;
 
-            return PartialView("_particle");
+            return PartialView("_Particle");
         }
 
         public ActionResult Menu()
