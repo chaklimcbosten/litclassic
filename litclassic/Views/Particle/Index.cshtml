@@ -12,18 +12,11 @@
         <div id="particleScrollList">
             @Html.Partial("_Particle")
         </div>
-
-        @*блок для обозначения процесса загрузки новых "частиц"*@
-        <div id="loading">ЗАГРУЗКА</div>
-
     </div>
     @Html.Partial("_Menu")
 </div>
 
 @*FROM https://metanit.com/sharp/articles/mvc/15.php*@
-@*@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap")*@
-@*@section Scripts{*@
 <script type="text/javascript">
     $(function () {
 
@@ -37,19 +30,17 @@
         function loadMoreParticles() {
             // обозначает начало процесса подгрузки "частиц"
             loading = true;
+            // показ блока загрузки
+            $("#information").show();
             $.ajax(
                 {
                     type: 'GET',
                     url: '/Particle/ForInfiniteScrolling',
                     contentType: 'html',
                     success: function (data, textstatus) {
-                        if (data != '') {
-                            $("#particleScrollList").append(data);
-                        }
-                        else {
-                            page = -1;
-                        }
-                        $("#loading").hide();
+                        $("#particleScrollList").append(data);
+                        // скрытие блока загрузки
+                        $("#information").hide();
                         // обозначает завершения процесса подгрузки "частиц"
                         loading = false;
                     }
@@ -58,7 +49,8 @@
 
         // обработка события скроллинга
         $(window).scroll(function () {
-            if (($(window).scrollTop() + $(window).height() > $(document).height() - 40) && (!loading)) {
+            // FROM https://stackoverflow.com/questions/38796726/if-window-scrolltop-document-height-window-height-300-wh/38796911
+            if (($(window).scrollTop() + $(window).height() > $(document).height() - 200) && (!loading)) {
                 loadMoreParticles();
             }
         });

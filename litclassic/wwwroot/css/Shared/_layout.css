@@ -71,9 +71,10 @@ header {
     /*8 dp*/
     /*box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 3px rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.20);*/
     /*6 dp*/
-    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px 0 rgba(0,0,0,0.20);
+    /*box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px 0 rgba(0,0,0,0.20);*/
     /*4 dp*/
     /*box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.20);*/
+    box-shadow: 2px 1px 0 rgba(0,0,0,.14), 0 1px 0px 0 rgba(0,0,0,.12), 0 0px 2px 0 rgba(0,0,0,.2);
 }
 .header {
     display: flex;
@@ -135,6 +136,19 @@ header {
     display: inline-block;
     width: 777px;
     padding-right: 20px;
+}
+
+.information {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 10px;
+    background-color: white;
+    border-radius: 1px;
+    box-shadow: 2px 1px 0 rgba(0,0,0,.14), 0 1px 0px 0 rgba(0,0,0,.12), 0 0px 2px 0 rgba(0,0,0,.2);
+    padding: 10px 20px 10px 20px;
+    color: black;
+    margin-bottom: 0px;
 }
 
 /*Интерактивная панель*/
