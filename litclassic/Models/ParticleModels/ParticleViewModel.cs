@@ -1,8 +1,12 @@
-﻿using litclassic.Models.ProxyModels;
+﻿using litclassic.LitClassicBooksModels;
+using litclassic.Models.ProxyModels;
 using System.Collections.Generic;
 
 namespace litclassic.Models.ParticleModels
 {
+    /// <summary>
+    /// Model of particle view
+    /// </summary>
     public class ParticleViewModel
     {
         // TODO
@@ -28,8 +32,8 @@ namespace litclassic.Models.ParticleModels
             ParticlePartialViewModel = new ParticlePartialViewModel(_particleProxy, _db);
             ParticleParams = new ParticleParams
             {
-                Authors = new List<string> { "Достоевский", "Пушкин" },
-                ThemeTypes = new List<string> { "основные", "ещё" }
+                Authors = new List<string> { "Ф.М. Достоевский", "А.С. Пушкин", "Н.В. Гоголь", "В.А.Жуковский", "Иван Андреевич Крылов", "М.Ю. Лермонтов", "Фёдор Иванович Тютчев", " А.К. Толстой", "М.В. Ломоносов"},
+                ThemeTypes = new List<string> { "Основные произведения", "Прочие произведения, заметки, письма и пр.", "Примечания, приложения, комментарии и пр." }
             };
 
             ParticlePartialViewModel.BuildModel(particlesCount);

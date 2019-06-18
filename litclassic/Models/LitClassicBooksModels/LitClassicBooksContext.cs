@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace litclassic
+namespace litclassic.LitClassicBooksModels
 {
     public partial class LitClassicBooksContext : DbContext
     {

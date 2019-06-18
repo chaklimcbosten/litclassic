@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Words";
+}
+
+<link href="~/css/Words/Words.min.css" rel="stylesheet" />
+<script type="text/javascript" src="~/js/infinite-word-scrolling.js"></script>
+
+<div class="main">
+    <div class="main-panel">
+        <div id="temp"></div>
+        <h1>Толковый словарь живого, великорусского языка Владимира Ивановича Даля</h1>
+        <div id="wordScrollList" class="word-scroll-list">
+            @Html.Partial("_Word")
+        </div>
+    </div>
+    @Html.Partial("_Menu")
+</div>
+

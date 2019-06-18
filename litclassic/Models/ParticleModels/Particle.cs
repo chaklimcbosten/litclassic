@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace litclassic.Models.ParticleModels
 {
+    /// <summary>
+    /// Particle model
+    /// </summary>
     public struct Particle
     {
         public int Id { get; set; }

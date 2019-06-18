@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewData["Title"] = "_Menu";
+}
+
+<div class="interactive-panel">
+    <div class="notification-panel">
+        <div class="panel-text">Уведомления</div>
+        <div id="noNotificationBlock" class="no-notification-block">Пока что их нет :)</div>
+        <div id="particleLoadingNotificationBlock" class="notification">
+            Подгружаются "частицы"...
+        </div>
+    </div>
+    <div class="options-panel">
+        <div class="panel-text">Настройки "частиц"</div>
+        <div class="particle-settings">
+            <div class="particle-settings-theme-types-column">
+                <div class="particle-settings-checkboxes-text">
+                    <h4>По содержанию:</h4>
+                </div>
+                <div class="particle-settings-checkboxes-theme-types">
+                    @foreach (var themeType in ViewBag.ParticleParams.ThemeTypes)
+                    {
+                        <div><input class="checkbox-span" type="checkbox" /> @themeType</div>
+                    }
+                    @*<div class="checkbox-span">
+                            <asp:CheckBox ID="CheckBoxThemeType0" runat="server" Text="Основные произведения"
+                                          ClientIDMode="Static" Checked="True" Font-Size="Smaller" CssClass="check-box" />
+                        </div>
+                        <div class="checkbox-span">
+                            <asp:CheckBox ID="CheckBoxThemeType1" runat="server"
+                                          Text="Прочие произведения, заметки, письма и пр." ClientIDMode="Static" Font-Size="Smaller" />
+                        </div>
+                        <div class="checkbox-span">
+                            <asp:CheckBox ID="CheckBoxThemeType2" runat="server"
+                                          Text="Примечания, приложения, комментарии и пр." ClientIDMode="Static" Font-Size="Smaller" />
+                        </div>*@
+                </div>
+            </div>
+            <div class="particle-settings-authors-numbers-column">
+                <div class="particle-settings-checkboxes-text">
+                    <h4>По авторам:</h4>
+                </div>
+                <div class="particle-settings-checkboxes-authors-numbers">
+                    @foreach (var author in ViewBag.ParticleParams.Authors)
+                    {
+                        <div><input class="checkbox-span" type="checkbox" /> @author</div>
+                    }
+                    @*<div class="particle-settings-authors-numbers-checkboxes-group">
+                            <div class="checkbox-span">
+                                <asp:CheckBox ID="CheckBoxAuthor0" runat="server" ClientIDMode="Static"
+                                              Text="Фёдор Михайлович Достоевский" Checked="True" Font-Size="Smaller" />
+                            </div>
+                            <div class="checkbox-span">
+                                <asp:CheckBox ID="CheckBoxAuthor1" runat="server" ClientIDMode="Static"
+                                              Text="Александр Сергеевич Пушкин" Checked="True" Font-Size="Smaller" />
+                            </div>
+                            <div class="checkbox-span">
+                                <asp:CheckBox ID="CheckBoxAuthor2" runat="server" ClientIDMode="Static"
+                                              Text="Николай Васильевич Гоголь" Checked="True" Font-Size="Smaller" />
+                            </div>
+                        </div>
+                        <div class="particle-settings-authors-numbers-checkboxes-group">
+                            <div class="checkbox-span">
+                                <asp:CheckBox ID="CheckBoxAuthor3" runat="server" ClientIDMode="Static"
+                                              Text="Василий Андреевич Жуковский" Checked="True" Font-Size="Smaller" />
+                            </div>
+                            <div class="checkbox-span">
+                                <asp:CheckBox ID="CheckBoxAuthor4" runat="server" ClientIDMode="Static"
+                                              Text="Иван Андреевич Крылов" Checked="True" Font-Size="Smaller" />
+                            </div>
+                            <div class="checkbox-span">
+                                <asp:CheckBox ID="CheckBoxAuthor5" runat="server" ClientIDMode="Static"
+                                              Text="Михаил Юрьевич Лермонтов" Checked="True" Font-Size="Smaller" />
+                            </div>
+                        </div>
+                        <div class="particle-settings-authors-numbers-checkboxes-group">
+                            <div class="checkbox-span">
+                                <asp:CheckBox ID="CheckBoxAuthor6" runat="server" ClientIDMode="Static"
+                                              Text="Фёдор Иванович Тютчев" Checked="True" Font-Size="Smaller" />
+                            </div>
+                            <div class="checkbox-span">
+                                <asp:CheckBox ID="CheckBoxAuthor7" runat="server" ClientIDMode="Static"
+                                              Text="Алексей Константинович Толстой" Checked="True" Font-Size="Smaller" />
+                            </div>
+                            <div class="checkbox-span">
+                                <asp:CheckBox ID="CheckBoxAuthor8" runat="server" ClientIDMode="Static"
+                                              Text="Михаил Васильевич Ломоносов" Checked="True" Font-Size="Smaller" />
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

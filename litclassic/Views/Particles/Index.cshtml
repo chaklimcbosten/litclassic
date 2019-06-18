@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Particles";
+}
+
+<link href="~/css/Particles/Particles.min.css" rel="stylesheet" />
+<script type="text/javascript" src="~/js/infinite-particle-scrolling.js"></script>
+
+<div class="main">
+    <div id="mainPanel" class="main-panel">
+
+        <h1>Случайные "частицы"</h1>
+        <div id="particleScrollList" class="particle-scroll-list">
+            @Html.Partial("_Particle")
+        </div>
+    </div>
+    @Html.Partial("_Menu")
+</div>
+

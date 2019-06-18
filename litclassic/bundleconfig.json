@@ -1,27 +1,53 @@
 [
   {
-    "outputFileName": "wwwroot/css/Home/Home.min.css",
+    "outputFileName": "wwwroot/css/Account/Account.css",
     "inputFiles": [
-      "wwwroot/css/Shared/Error.css",
+      "wwwroot/css/Account/_Login.css",
+      "wwwroot/css/Account/_Register.css",
+      "wwwroot/css/Shared/_Error.css",
+      "wwwroot/css/Shared/_Footer.css",
+      "wwwroot/css/Shared/_Header.css",
+      "wwwroot/css/Shared/_Layout.css",
+      "wwwroot/css/Shared/_Menu.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/Home/Home.css",
+    "inputFiles": [
+      "wwwroot/css/Shared/_Error.css",
+      "wwwroot/css/Shared/_Footer.css",
+      "wwwroot/css/Shared/_Header.css",
+      "wwwroot/css/Shared/_Layout.css",
+      "wwwroot/css/Shared/_Menu.css",
+      "wwwroot/css/Home/_Index.css",
       "wwwroot/css/Home/_Menu.css",
-      "wwwroot/css/Shared/_layout.css"
+      "wwwroot/css/Home/_Privacy.css"
     ]
   },
   {
-    "outputFileName": "wwwroot/css/Particle/Particle.min.css",
+    "outputFileName": "wwwroot/css/Particles/Particles.css",
     "inputFiles": [
-      "wwwroot/css/Shared/Error.css",
-      "wwwroot/css/Particle/_Menu.css",
-      "wwwroot/css/Shared/_layout.css"
+      "wwwroot/css/Particles/_Index.css",
+      "wwwroot/css/Particles/_Menu.css",
+      "wwwroot/css/Particles/_Particles.css",
+      "wwwroot/css/Shared/_Error.css",
+      "wwwroot/css/Shared/_Footer.css",
+      "wwwroot/css/Shared/_Header.css",
+      "wwwroot/css/Shared/_Layout.css",
+      "wwwroot/css/Shared/_Menu.css"
     ]
   },
   {
-    "outputFileName": "wwwroot/css/Account/Account.min.css",
+    "outputFileName": "wwwroot/css/Words/Words.css",
     "inputFiles": [
-      "wwwroot/css/Account/Login.css",
-      "wwwroot/css/Account/Register.css",
-      "wwwroot/css/Shared/Error.css",
-      "wwwroot/css/Shared/_layout.css"
+      "wwwroot/css/Words/_Words.css",
+      "wwwroot/css/Words/_Index.css",
+      "wwwroot/css/Words/_Menu.css",
+      "wwwroot/css/Shared/_Menu.css",
+      "wwwroot/css/Shared/_Layout.css",
+      "wwwroot/css/Shared/_Header.css",
+      "wwwroot/css/Shared/_Footer.css",
+      "wwwroot/css/Shared/_Error.css"
     ]
   }
 ]

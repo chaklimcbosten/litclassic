@@ -1,9 +1,9 @@
-﻿/*Блок настроек получения "частиц"*/
-.particle-settings {
+﻿.particle-settings {
     color: black;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
 .particle-settings-theme-types-column {
     display: flex;

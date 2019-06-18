@@ -4,39 +4,9 @@
 }
 
 <div class="interactive-panel">
-    <div class="nav-panel">
-        <h4>Разделы сайта:</h4>
-        @*<asp:UpdatePanel ID="UpdatePanelNotifications" runat="server" UpdateMode="Conditional">
-            <ContentTemplate>*@
-                <div class="buttons-nav-panel">
-                    <div class="nav-button-wrapper">
-                        <a asp-controller="Particle" asp-action="Index">"ЧАСТИЦЫ"</a>
-                        @*<div class="particles-notif"><asp:Label ID="LabelParticleNotification" runat="server" Text="!"></asp:Label></div>*@
-                    </div>
-                    <div class="nav-button-wrapper">
-                        <a asp-controller="Word" asp-action="Index">СЛОВАРЬ</a>
-                        @*<div class="words-notif"><asp:Label ID="LabelWordNotification" runat="server" Text="1,2T"></asp:Label></div>*@
-                    </div>
-                </div>
-            @*</ContentTemplate>
-        </asp:UpdatePanel>*@
-    </div>
-    <div class="options-panel">
-        @*<asp:Label ID="LabelLastAction" runat="server" CssClass="last-actions">*@
-            <div class="last-actions-tip">
-                <h4>Кликните по чёрному блоку для перехода в соответствующий раздел сайта.</h4>
-            </div>
-            <div class="last-actions-links">
-                <asp:Label ID="LabelParticleColumn" runat="server" CssClass="last-action-particle">
-                    <h4>Вы смотрели эту "частицу":</h4>
-                    <asp:Label ID="LabelLastParticle" runat="server"></asp:Label>
-                </asp:Label>
-                <asp:Label ID="LabelWordColumn" runat="server" CssClass="last-action-word">
-                    <h4>Вы смотрели это слово:</h4>
-                    <asp:Label ID="LabelLastWord" runat="server"></asp:Label>
-                </asp:Label>
-            </div>
-        @*</asp:Label>*@
+    <div class="notification-panel">
+        <div class="panel-text">Уведомления</div>
+        <div id="noNotificationBlock" class="no-notification-block">Пока что их нет :)</div>
     </div>
 </div>
 

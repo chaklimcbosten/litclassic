@@ -1,4 +1,5 @@
-﻿using litclassic.Models.ProxyModels;
+﻿using litclassic.LitClassicBooksModels;
+using litclassic.Models.ProxyModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace litclassic.Models.ParticleModels
 {
+    /// <summary>
+    /// Model of particle partial view
+    /// </summary>
     public class ParticlePartialViewModel
     {
         private readonly IParticleProxy _particleProxy;

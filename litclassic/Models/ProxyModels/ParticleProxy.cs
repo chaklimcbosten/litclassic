@@ -1,4 +1,5 @@
-﻿using litclassic.Models.ParticleModels;
+﻿using litclassic.LitClassicBooksModels;
+using litclassic.Models.ParticleModels;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
@@ -59,6 +60,17 @@ namespace litclassic.Models.ProxyModels
         private Particle NewParticle(int id)
         {
             var body = _db.Particles.Where(a => a.Id == id).Select(b => b.Line).Single();
+
+            //body = body.Replace("$$emphasis-open$$", "<emphasis>");
+            //body = body.Replace("$$emphasis-close$$", "</emphasis>");
+            //body = body.Replace("$$strong-open$$", "<strong>");
+            //body = body.Replace("$$strong-close$$", "</strong>");
+
+            body = body.Replace("$$emphasis-open$$", "");
+            body = body.Replace("$$emphasis-close$$", "");
+            body = body.Replace("$$strong-open$$", "");
+            body = body.Replace("$$strong-close$$", "");
+
             Particle particle = new Particle()
             {
                 Id = id,

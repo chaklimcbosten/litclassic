@@ -1,4 +1,5 @@
-﻿using litclassic.Models.ProxyModels;
+﻿using litclassic.LitClassicBooksModels;
+using litclassic.Models.ProxyModels;
 using litclassic.Models.UserModels;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;

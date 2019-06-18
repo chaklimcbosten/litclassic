@@ -1,0 +1,50 @@
+﻿p {
+    margin: 5px;
+}
+
+.particle-block {
+    margin: 0 0 30px 0;
+    flex-basis: 260px;
+    flex-grow: 1.5;
+}
+.particle-head-block {
+    border-top: 3px solid darkseagreen;
+    font-size: 22px;
+    letter-spacing: 0.25px;
+    font-weight: 300;
+    display: inline-block;
+    margin: 10px 0 0 0;
+    padding: 10px 0 0 0;
+}
+.particle-body-block {
+    background-color: aliceblue;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 0 0 rgba(0,0,0,.14), 0 0.2px 1px 0 rgba(0,0,0,.12), 0 0 2px 0 rgba(0,0,0,.2);
+    padding: 3px;
+}
+.particle-buttons {
+    margin: 10px 0 0 0;
+}
+.particle-button {
+    background-color: darkseagreen;
+    border: 3px solid darkseagreen;
+    color: white;
+}
+
+summary {
+    font-size: 12px;
+    text-decoration: none;
+    outline: none;
+    float: right;
+}
+.particle-details {
+    margin: 15px 0 0 0;
+}
+
+.particle-hr {
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    height: 1px;
+    margin: 0 0 20px 0;
+}

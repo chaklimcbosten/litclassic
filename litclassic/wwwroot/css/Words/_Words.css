@@ -1,0 +1,39 @@
+﻿p {
+    margin: 5px;
+}
+summary {
+    font-size: 12px;
+    text-decoration: none;
+    outline: none;
+    float: right;
+}
+
+.words-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.word-block {
+    margin: 0px 15px 15px 0px;
+    flex-basis: 260px;
+    flex-grow: 1.5;
+    /*color: black;*/
+}
+.word-name {
+    border-bottom: 3px solid darkseagreen;
+    font-size: 34px;
+    letter-spacing: 0.25px;
+    font-weight: 300;
+    display: inline-block;
+}
+
+.word-links-block {
+    width: 70%;
+    float: right;
+}
+.word-link-name {
+    font-size: 24px;
+    letter-spacing: 0px;
+    font-weight: 300;
+    display: inline-block;
+}

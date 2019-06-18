@@ -1,0 +1,27 @@
+﻿@using litclassic.Models.ParticleModels
+
+<form asp-action="Index" asp-controller="Particle" asp-anti-forgery="true">
+    <div class="particles-block">
+        @foreach (Particle particle in ViewBag.Particles)
+        {
+            <div class="particle-block">
+
+                @foreach (var line in particle.BodyLines)
+                {
+                    <p>@line</p>
+                }
+
+                <div class="particle-head-block">@particle.Title </div>
+
+                <div class="particle-buttons">
+                    <input id="ButtonParticleLike" class="particle-button" type="button" value="Мне нравится" />
+                    <input id="ButtonParticleFavourite" class="particle-button" type="button" value="Добавить в избранное" />
+                    <input id="ButtonParticleShare" class="particle-button" type="button" value="Поделиться" />
+                </div>
+
+            </div>
+
+            <div class="particle-hr"></div>
+        }
+    </div>
+</form>

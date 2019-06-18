@@ -1,4 +1,5 @@
-﻿using litclassic.Models.WordModels;
+﻿using litclassic.LitClassicBooksModels;
+using litclassic.Models.WordModels;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;

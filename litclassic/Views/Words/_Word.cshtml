@@ -1,0 +1,31 @@
+﻿@using litclassic.Models.WordModels
+
+<form asp-action="Index" asp-controller="Word" asp-anti-forgery="true">
+    <div class="words-block">
+        @foreach (Word word in ViewBag.Words)
+        {
+            <div class="footer-desktop-layout"><div class="footer-desktop-hr"></div></div>
+            <div class="word-block">
+                <div class="word-name">@word.Name</div>
+                <p>@word.Value</p>
+
+                @if (word.WordsInLinks.Count != 0)
+                {
+
+                    <div class="word-links-block">
+                        <details>
+                            <summary>Ссылки</summary>
+                            @foreach (Word wordInLink in word.WordsInLinks)
+                            {
+                                <div class="word-link-block">
+                                    <div class="word-link-name">@wordInLink.Name</div>
+                                    <p>@wordInLink.Value</p>
+                                </div>
+                            }
+                        </details>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</form>

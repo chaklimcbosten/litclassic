@@ -1,0 +1,80 @@
+﻿/*Заголовок*/
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    /*8 dp*/
+    /*box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 3px rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.20);*/
+    /*6 dp*/
+    /*box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px 0 rgba(0,0,0,0.20);*/
+    /*4 dp*/
+    /*box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.20);*/
+    box-shadow: 0px 1px 0 rgba(0,0,0,.14), 0 1px 0px 0 rgba(0,0,0,.12), 0 0px 2px 0 rgba(0,0,0,.2);
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1077px;
+}
+.header-logo {
+    display: flex;
+}
+.header-logo-img {
+    width: 70px;
+    height: 70px;
+    float: left;
+}
+.header-logo-text {
+    color: black;
+    margin: 14px 20px 14px 20px;
+    letter-spacing: 0.25px;
+    font-size: 34px;
+}
+
+/*Клавиши-ссылки на разделы сайта*/
+.link-button {
+    text-decoration: none;
+    color: #000;
+    float: right;
+    border-bottom: 0px solid darkseagreen;
+}
+    .link-button:hover {
+        border-bottom: 3px solid darkseagreen;
+    }
+    .link-button:active {
+        border-bottom: 3px solid darkseagreen;
+    }
+.link-button-text {
+    padding: 24px 0px 24px 0px;
+    margin: 0px 7px 0px 7px;
+    color: black;
+}
+
+@media screen and (max-width:1160px){
+    header {
+        width: 96%;
+        height: 50px;
+        padding: 0% 2% 0% 2%;
+    }
+    .header-logo {
+        width: 100%;
+    }
+    .header-logo-img {
+        width: 50px;
+        height: 50px;
+        float: left;
+    }
+    .header-logo-text {
+        margin: 4px 2% 4px 2%;
+    }
+    .header-links {
+        visibility: hidden;
+    }
+}

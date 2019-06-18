@@ -1,4 +1,5 @@
-﻿using litclassic.Models.ProxyModels;
+﻿using litclassic.LitClassicBooksModels;
+using litclassic.Models.ProxyModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

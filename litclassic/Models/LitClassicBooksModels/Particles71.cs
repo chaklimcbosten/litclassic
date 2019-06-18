@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace litclassic
+namespace litclassic.LitClassicBooksModels
 {
     public partial class Particles71
     {
